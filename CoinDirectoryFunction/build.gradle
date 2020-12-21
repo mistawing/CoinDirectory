@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.3'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.3'
+
+    implementation 'com.amazonaws:aws-lambda-java-core:1.2.1'
+    implementation 'com.amazonaws:aws-lambda-java-events:3.1.0'
+    runtimeOnly 'com.amazonaws:aws-lambda-java-log4j2:1.2.0'
+
+    implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.859')
+    implementation 'com.amazonaws:aws-java-sdk-dynamodb'
+    implementation 'com.amazonaws:aws-java-sdk-sqs'
+
+    testImplementation 'junit:junit:4.13.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.amazonaws:aws-java-sdk-dynamodb'
+
+    implementation 'com.github.miska12345:OpenMarket-Dao:master-SNAPSHOT'
+}
